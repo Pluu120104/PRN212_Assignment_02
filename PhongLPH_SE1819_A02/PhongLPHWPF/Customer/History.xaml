@@ -1,0 +1,41 @@
+﻿<Page x:Class="PhongLPHWPF.Customer.History"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PhongLPHWPF.Customer"
+      mc:Ignorable="d"
+      Title="History" Height="450" Width="800">
+    <Grid Background="#f1bd9e">
+        <ListView Name="lvBH"
+          Margin="60,104,60,104">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Booking Date"
+                            Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding BookingDate, StringFormat={}{0:dd/MM/yyyy}}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="TotalPrice"
+                            Width="200"
+                            DisplayMemberBinding="{Binding Path=TotalPrice}" />
+                    <GridViewColumn Header="Customer Name"
+                            Width="200"
+                            DisplayMemberBinding="{Binding CustomerName}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="History"
+               HorizontalAlignment="Left"
+               Margin="343,10,0,0"
+               VerticalAlignment="Top"
+               Height="89"
+               FontStyle="Normal"
+               Width="161"
+               Foreground="#FFFFFF"
+               FontSize="48" />
+    </Grid>
+</Page>
